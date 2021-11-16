@@ -47,7 +47,7 @@ class RezultatKvizaTest {
                 () -> assertEquals(0, rezultatKviza.getTotal())
         );
     }
-/*
+
     @Test
     public void testRezultatkviza(){
         Map<Pitanje, ArrayList<String>> zaokruzeniOdgovori = new HashMap<>();
@@ -77,9 +77,8 @@ class RezultatKvizaTest {
         String rezultat2 = "Na kvizu \"Kviz opsteg znanja\" ostvarili ste ukupno 3.0 poena. Raspored po pitanjima:\n" +
                 "Koji mjeseci imaju 28 dana? - 0.0b\n" +
                 "Koja od boja se moze naci na semaforu? - 3.0b";
-
         List<String> moguciTacni = new ArrayList<>(List.of(rezultat1, rezultat2));
         assertTrue(moguciTacni.contains(rezultatKviza.toString()));
-    }*/
+    }
 
 }

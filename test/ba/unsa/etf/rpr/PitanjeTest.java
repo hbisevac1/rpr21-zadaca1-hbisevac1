@@ -170,7 +170,6 @@ class PitanjeTest {
                 () -> assertEquals(3, poeni3)
         );
     }
-//ne radi ovaj
 
     @Test
     public void testIzracunajPoene7(){

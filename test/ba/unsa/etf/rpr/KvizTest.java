@@ -121,7 +121,6 @@ class KvizTest {
                         kviz.toString())
         );
     }
-/*
     @Test
     public void testPredajKviz1(){
         kviz.setSistemBodovanja(SistemBodovanja.PARCIJALNO);
@@ -197,6 +196,6 @@ class KvizTest {
                 () -> assertEquals(3, rezultatKviza.getBodovi().get(pitanja.get(0))),
                 () -> assertEquals(0, rezultatKviza.getBodovi().get(pitanja.get(1)))
         );
-    }*/
+    }
 
 }

@@ -3,22 +3,29 @@ package ba.unsa.etf.rpr;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-//Zavrsiti predajKviz i klasu RezultatKviza i metodu toString
+// i metodu toString
 
 
-enum SistemBodovanja {BINARNO, PARCIJALNO, PARCIJALNO_SA_NEGATIVNIM};
+enum SistemBodovanja {BINARNO("binarno"), PARCIJALNO("parcijalno"), PARCIJALNO_SA_NEGATIVNIM("parcijalno sa negativnim");
+    private String ime;
+    SistemBodovanja(String s) {
+        this.ime=s;
+    }
+    public String getIme(){
+        return ime;
+    }
+};
 
 public class Kviz {
     private String naziv;
     private Map<Pitanje, ArrayList<String>> pitanja;
     private SistemBodovanja sistemBodovanja;
+
     public Object getNaziv() {
         return naziv;
     }
-    /*public RezultatKviza predajKviz(Map<Pitanje, ArrayList<String>> zaokruzeniOdgovori) {
-
-    }*/
 
     public Kviz(String naziv, SistemBodovanja sistem) {
         this.naziv=naziv;
@@ -62,13 +69,32 @@ public class Kviz {
     public void setPitanja(Map<Pitanje, ArrayList<String>> pitanja) {
         this.pitanja = pitanja;
     }
-    /*@Override
-    public String toString() {
-        return "Kviz" + naziv + "boduje se" + sistemBodovanja +".\n"+
-                "Pitanja:";
+
+    public RezultatKviza predajKviz(Map<Pitanje, ArrayList<String>> zaokruzeniOdgovori) {
+        double poeni = 0;
+        RezultatKviza rezultati = new RezultatKviza(this);
+        Map<Pitanje, Double> p = new HashMap<>();
+        for (Map.Entry<Pitanje, ArrayList<String>> entry : zaokruzeniOdgovori.entrySet()){
+            poeni+=entry.getKey().izracunajPoene(entry.getValue(), sistemBodovanja);
+            p.put(entry.getKey(), entry.getKey().izracunajPoene(entry.getValue(), sistemBodovanja));
+        }
+        rezultati.setBodovi(p);
+        rezultati.setTotal(poeni);
+        return rezultati;
     }
-    RezultatKviza predajKvi(Map<Pitanje, ArrayList<String>> tacni_odgovori){
 
-
+    /*
+    @Override
+    public String toString() {
+        String pom="";
+        int br=0;
+        for(Map.Entry<Pitanje, ArrayList<String>> entry : pitanja.entrySet()){
+            pom += br + 1 + "." + entry.getKey().getTekst() + "?(" + entry.getKey().getBrojPoena() + "b)\n";
+            for(Map.Entry<Pitanje, ArrayList<String>> pitanje : pitanja.entrySet()){
+                if(pitanje.getKey().getOdgovori().containsKey(entry.getValue()))
+            }
+        }
+        return "Kviz" + naziv + "boduje se" + sistemBodovanja.getIme() +".\n"+
+                "Pitanja:\n";
     }*/
 }

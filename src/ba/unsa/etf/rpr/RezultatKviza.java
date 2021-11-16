@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class RezultatKviza {
     private Kviz kviz;
@@ -40,9 +41,9 @@ public class RezultatKviza {
     public String toString() {
         String pom = "";
         for(Map.Entry<Pitanje, Double> entry : bodovi.entrySet()){
-            pom += "\n\t" + entry.getKey().getTekst() + " - " + entry.getValue();
+            pom += "\n" + entry.getKey().getTekst() + " - " + entry.getValue()+"b";
         }
-        return "Na kvizu" + kviz.getNaziv() +
-                "ostvarili ste ukupno " + total + pom;
+        return "Na kvizu \"" + kviz.getNaziv() +
+                "\" ostvarili ste ukupno " + total + " poena. Raspored po pitanjima:" + pom;
     }
 }
