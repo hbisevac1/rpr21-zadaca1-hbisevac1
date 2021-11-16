@@ -4,21 +4,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+//Zavrsiti predajKviz i klasu RezultatKviza i metodu toString
+
+
+enum SistemBodovanja {BINARNO, PARCIJALNO, PARCIJALNO_SA_NEGATIVNIM};
+
 public class Kviz {
     private String naziv;
     private Map<Pitanje, ArrayList<String>> pitanja;
-
+    private SistemBodovanja sistemBodovanja;
     public Object getNaziv() {
         return naziv;
     }
-//popraaviti ENUM
-    public enum SistemBodovanja {BINARNO, PARCIJALNO, PARCIJALNO_SA_NEGATIVNIM};
-    private SistemBodovanja sistemBodovanja;
+    /*public RezultatKviza predajKviz(Map<Pitanje, ArrayList<String>> zaokruzeniOdgovori) {
+
+    }*/
 
     public Kviz(String naziv, SistemBodovanja sistem) {
         this.naziv=naziv;
         this.pitanja = new HashMap<>();
-        this.sistemBodovanja =sistem;
+        this.sistemBodovanja = sistem;
     }
 
     public Map<Pitanje, ArrayList<String>> getKolekicija() {
@@ -46,9 +51,24 @@ public class Kviz {
 
     }
 
-    @Override
+    public void setNaziv(String naziv) {
+        this.naziv = naziv;
+    }
+
+    public Map<Pitanje, ArrayList<String>> getPitanja() {
+        return pitanja;
+    }
+
+    public void setPitanja(Map<Pitanje, ArrayList<String>> pitanja) {
+        this.pitanja = pitanja;
+    }
+    /*@Override
     public String toString() {
         return "Kviz" + naziv + "boduje se" + sistemBodovanja +".\n"+
                 "Pitanja:";
     }
+    RezultatKviza predajKvi(Map<Pitanje, ArrayList<String>> tacni_odgovori){
+
+
+    }*/
 }

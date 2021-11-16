@@ -1,5 +1,5 @@
 package ba.unsa.etf.rpr;
-/*
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,7 +47,7 @@ class RezultatKvizaTest {
                 () -> assertEquals(0, rezultatKviza.getTotal())
         );
     }
-
+/*
     @Test
     public void testRezultatkviza(){
         Map<Pitanje, ArrayList<String>> zaokruzeniOdgovori = new HashMap<>();
@@ -80,6 +80,6 @@ class RezultatKvizaTest {
 
         List<String> moguciTacni = new ArrayList<>(List.of(rezultat1, rezultat2));
         assertTrue(moguciTacni.contains(rezultatKviza.toString()));
-    }
+    }*/
 
-}*/
+}

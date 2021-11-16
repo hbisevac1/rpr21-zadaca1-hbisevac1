@@ -1,5 +1,5 @@
 package ba.unsa.etf.rpr;
-/*
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -121,7 +121,7 @@ class KvizTest {
                         kviz.toString())
         );
     }
-
+/*
     @Test
     public void testPredajKviz1(){
         kviz.setSistemBodovanja(SistemBodovanja.PARCIJALNO);
@@ -197,6 +197,6 @@ class KvizTest {
                 () -> assertEquals(3, rezultatKviza.getBodovi().get(pitanja.get(0))),
                 () -> assertEquals(0, rezultatKviza.getBodovi().get(pitanja.get(1)))
         );
-    }
+    }*/
 
-}*/
+}

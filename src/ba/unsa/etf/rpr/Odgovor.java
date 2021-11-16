@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr;
 
+import java.util.Objects;
+
 public class Odgovor {
     private String tekstOdgovora;
     private boolean tacno;
@@ -23,5 +25,18 @@ public class Odgovor {
 
     public void setTacno(boolean tacno) {
         this.tacno = tacno;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Odgovor odgovor = (Odgovor) o;
+        return tacno == odgovor.tacno && Objects.equals(tekstOdgovora, odgovor.tekstOdgovora);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tekstOdgovora, tacno);
     }
 }

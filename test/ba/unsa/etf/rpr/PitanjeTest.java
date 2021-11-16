@@ -1,5 +1,5 @@
 package ba.unsa.etf.rpr;
-/*
+
 import org.junit.jupiter.api.Test;
 import java.util.List;
 
@@ -170,6 +170,7 @@ class PitanjeTest {
                 () -> assertEquals(3, poeni3)
         );
     }
+//ne radi ovaj
 
     @Test
     public void testIzracunajPoene7(){
@@ -211,6 +212,7 @@ class PitanjeTest {
         );
     }
 
+
     @Test
     public void testIzracunajPoene9(){
         Pitanje pitanje = new Pitanje("Koja od boja se moze naci na semaforu?", 4);
@@ -250,6 +252,7 @@ class PitanjeTest {
                 () -> assertEquals(4, poeni5)
         );
     }
+
 
     @Test
     public void provjeraValidnostiOdgovoraTest1(){
@@ -295,4 +298,4 @@ class PitanjeTest {
                 () -> assertEquals(rezultat+"\n\td: plava", pitanje.toString())
         );
     }
-}*/
+}
