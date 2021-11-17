@@ -17,10 +17,13 @@ public class Main {
             String odg="";
             Scanner ulaz = new Scanner(System.in);
             odg  = ulaz.nextLine();
-            String[] razdvojeniOdgovori = odg.split(", ");
             ArrayList<String> odgovor = new ArrayList<String>();
-            for(String o : razdvojeniOdgovori){
-                odgovor.add(o);
+            if(odg.isBlank() || odg.isEmpty()) odgovor.add(null);
+            else {
+                String[] razdvojeniOdgovori = odg.split(", ");
+                for (String o : razdvojeniOdgovori) {
+                    odgovor.add(o);
+                }
             }
             mojiOdgovori.put(listaPitanja.get(i), odgovor);
         }

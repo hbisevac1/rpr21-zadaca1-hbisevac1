@@ -68,7 +68,7 @@ public class Pitanje {
     public double izracunajPoene(List<String> id_odgovora, SistemBodovanja bodovanjae){
         //izuzeci
         for(int i=0; i<id_odgovora.size(); i++){
-            if(!odgovori.containsKey(id_odgovora.get(i))) throw new IllegalArgumentException("Odabran je nepostojeći odgovor");
+            if(!odgovori.containsKey(id_odgovora.get(i)) && id_odgovora.get(i)!=null) throw new IllegalArgumentException("Odabran je nepostojeći odgovor");
             for(int j=i+1; j < id_odgovora.size(); j++){
                 if(id_odgovora.get(i).equals(id_odgovora.get(j))) throw new IllegalArgumentException("Postoje duplikati među odabranim odgovorima");
             }
