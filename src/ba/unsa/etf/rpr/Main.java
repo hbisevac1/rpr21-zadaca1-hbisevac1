@@ -4,9 +4,11 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Main {
+    public static void igrajKviz(Kviz k){
 
+    }
     public static void main(String[] args) {
 
-        //System.out.println("Ugodno rješavanje zadaće 1 :)");
+        System.out.println("Ugodno rješavanje zadaće 1 :)");
     }
 }

@@ -100,7 +100,6 @@ class KvizTest {
 
     @Test
     public void testToString(){
-        //prikaz cijelog kviza uz oznacene tacne odgovore
         String tacno = "Kviz \"Kviz opsteg znanja\" boduje se binarno. Pitanja:\n" +
                 "1. Koja od boja se moze naci na semaforu?(3.0b)\n" +
                 "\ta: zuta(T)\n" +
