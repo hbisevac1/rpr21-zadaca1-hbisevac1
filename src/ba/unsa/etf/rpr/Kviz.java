@@ -2,7 +2,6 @@ package ba.unsa.etf.rpr;
 
 import java.util.*;
 
-// i metodu toString
 
 
 enum SistemBodovanja {BINARNO("binarno"), PARCIJALNO("parcijalno"), PARCIJALNO_SA_NEGATIVNIM("parcijalno sa negativnim bodovima");
@@ -40,11 +39,6 @@ public class Kviz {
     }
 
     void dodajPitanje(Pitanje pitanje) throws IllegalArgumentException {
-        /*
-        for(Map.Entry<Pitanje, ArrayList<String>> entry : pitanja.entrySet()) {
-            if (entry.getKey().getTekst().equalsIgnoreCase(pitanje.getTekst()))
-                throw new IllegalArgumentException("Ne možete dodati pitanje sa tekstom koji već postoji");
-        }*/
         for(int i = 0; i < pitanja.size(); i++){
             if(pitanja.get(i).getTekst().equalsIgnoreCase(pitanje.getTekst())) throw new IllegalArgumentException("Ne možete dodati pitanje sa tekstom koji već postoji");
         }
@@ -74,9 +68,6 @@ public class Kviz {
         }
         rezultati.setBodovi(p);
         rezultati.setTotal(poeni);
-        /*for(Map.Entry<Pitanje, ArrayList<String>> entry : pitanja.entrySet()){
-            if(!rezultati.getBodovi().containsKey(entry.getKey())) rezultati.getBodovi().put(entry.getKey(), (double) 0);
-        }*/
         for(int i = 0; i < pitanja.size(); i++){
             if(!rezultati.getBodovi().containsKey(pitanja.get(i))) rezultati.getBodovi().put(pitanja.get(i), (double) 0);
         }
@@ -87,17 +78,6 @@ public class Kviz {
     @Override
     public String toString() {
         String pom="";
-        /*for(Map.Entry<Pitanje, ArrayList<String>> entry : pitanja.entrySet()){
-            int broj=br+1;
-            pom += "\n" + broj + ". " + entry.getKey().getTekst() + "(" + entry.getKey().getBrojPoena() + "b)";
-            Pitanje pitanje = entry.getKey();
-            Map<String, Odgovor> odgovori = pitanje.getOdgovori();
-            for(Map.Entry<String, Odgovor> entry1 : odgovori.entrySet()){
-                pom+= "\n\t" + entry1.getKey() + ": " + entry1.getValue().getTekstOdgovora();
-                if(entry1.getValue().isTacno()) pom+="(T)";
-            }
-            br++;
-        }*/
         for(int i = 0; i < pitanja.size(); i++){
             int broj=i+1;
             pom += "\n" + broj + ". " + pitanja.get(i).getTekst() + "(" + pitanja.get(i).getBrojPoena() + "b)";
