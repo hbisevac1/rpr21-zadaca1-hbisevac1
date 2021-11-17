@@ -65,7 +65,7 @@ public class Pitanje {
         return "" + tekst + "("+brojPoena+"b)"+ pom;
     }
 
-    public double izracunajPoene(List<String> id_odgovora, SistemBodovanja bodovanjae){
+    public double izracunajPoene(List<String> id_odgovora, SistemBodovanja bodovanjae) throws IllegalArgumentException {
         //izuzeci
         for(int i=0; i<id_odgovora.size(); i++){
             if(!odgovori.containsKey(id_odgovora.get(i)) && id_odgovora.get(i)!=null) throw new IllegalArgumentException("Odabran je nepostojeći odgovor");
