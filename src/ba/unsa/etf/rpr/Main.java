@@ -53,7 +53,7 @@ public class Main {
 
     }
     public static void main(String[] args) {
-        Kviz kviz = new Kviz("Filmski kviz", SistemBodovanja.BINARNO);
+        Kviz kviz = new Kviz("Filmski kviz", SistemBodovanja.PARCIJALNO);
         Pitanje pitanje1 = new Pitanje("Glavni lik u crtanom filmu \"Lion King\" je: ", 2.0);
         pitanje1.dodajOdgovor("a", "Mufasa", false);
         pitanje1.dodajOdgovor("b", "Nala", false);
@@ -84,7 +84,7 @@ public class Main {
         kviz.dodajPitanje(pitanje5);
         Pitanje pitanje6 = new Pitanje("Ko je bio najbolji prijatelj Han Sol-a?", 6);
         try{
-            pitanje5.dodajOdgovor("a", "Hana Bisevac", true);
+            pitanje5.dodajOdgovor("a", "Hana Bisevac", false);
             pitanje5.dodajOdgovor("b", "Darth Vader", false);
             pitanje5.dodajOdgovor("c", "Chewbacca", true);
         }catch(IllegalArgumentException e){
