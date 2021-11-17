@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -11,6 +12,7 @@ public class RezultatKviza {
     public RezultatKviza(Kviz kviz) {
         this.kviz = kviz;
         this.total = 0;
+        bodovi = new HashMap<>();
     }
 
     public Kviz getKviz() {

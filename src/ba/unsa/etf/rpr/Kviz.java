@@ -72,6 +72,7 @@ public class Kviz {
 
     public RezultatKviza predajKviz(Map<Pitanje, ArrayList<String>> zaokruzeniOdgovori) {
         double poeni = 0;
+
         RezultatKviza rezultati = new RezultatKviza(this);
         Map<Pitanje, Double> p = new HashMap<>();
         for (Map.Entry<Pitanje, ArrayList<String>> entry : zaokruzeniOdgovori.entrySet()){
@@ -80,6 +81,9 @@ public class Kviz {
         }
         rezultati.setBodovi(p);
         rezultati.setTotal(poeni);
+        for(Map.Entry<Pitanje, ArrayList<String>> entry : pitanja.entrySet()){
+            if(!rezultati.getBodovi().containsKey(entry.getKey())) rezultati.getBodovi().put(entry.getKey(), (double) 0);
+        }
         return rezultati;
     }
 
